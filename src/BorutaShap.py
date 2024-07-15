@@ -846,7 +846,7 @@ class BorutaShap:
                     self.shap_values = np.abs(self.shap_values).mean(0)
 
             else:
-                self.shap_values = explainer.shap_values(self.find_sample())
+                self.shap_values = explainer.shap_values(np.array(self.find_sample()))
                 self.shap_values = np.abs(self.shap_values).mean(0)
 
         else:
@@ -870,7 +870,7 @@ class BorutaShap:
                     self.shap_values = np.abs(self.shap_values).mean(0)
 
             else:
-                self.shap_values = explainer.shap_values(self.X_boruta)
+                self.shap_values = explainer.shap_values(np.array(self.X_boruta))
                 self.shap_values = np.abs(self.shap_values).mean(0)
 
 
